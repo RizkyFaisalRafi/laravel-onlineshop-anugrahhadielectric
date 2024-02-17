@@ -7,6 +7,7 @@
             <a href="index.html">St</a>
         </div>
 
+        {{-- Dashboard --}}
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown">
@@ -21,7 +22,8 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-item dropdown">
+            {{-- Users --}}
+            <li class="nav-item dropdown">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Users</span></a>
                 <ul class="dropdown-menu">
@@ -31,7 +33,7 @@
                     </li>
 
                 </ul>
-            </li> --}}
+            </li>
 
             {{-- <li class="nav-item dropdown">
                 <a href="#"
