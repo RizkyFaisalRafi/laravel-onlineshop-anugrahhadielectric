@@ -35,7 +35,7 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Category</span></a>
                 <ul class="dropdown-menu">
@@ -45,7 +45,7 @@
                     </li>
 
                 </ul>
-            </li> --}}
+            </li>
 
             {{-- <li class="nav-item dropdown">
                 <a href="#"

@@ -26,5 +26,8 @@ Route::middleware(['auth'])->group(function() {
 
     Route::resource('user', UserController::class);
 
+    // category
+    Route::resource('category', \App\Http\Controllers\CategoryController::class);
+
 });
 
