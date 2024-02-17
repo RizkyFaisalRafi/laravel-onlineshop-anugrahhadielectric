@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +24,15 @@ class CategoryController extends Controller
 
     // create
     public function create() {
-        return view('pages.dashboard');
+        return view('pages.category.create');
     }
 
     // store
     public function store(Request $request) {
-        return view('pages.dashboard');
+        $data = $request->all();
+        // $data['password'] = Hash::make($request->input('password'));
+        Category::create($data);
+        return redirect()->route('category.index');
     }
 
     // show
