@@ -53,6 +53,8 @@ class CategoryController extends Controller
 
     // destroy
     public function destroy($id) {
-        return view('pages.dashboard');
+        $user = Category::findOrFail($id);
+        $user->delete();
+        return redirect()->route('category.index');
     }
 }
