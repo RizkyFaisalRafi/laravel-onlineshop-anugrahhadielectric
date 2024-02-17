@@ -45,6 +45,7 @@ class FortifyServiceProvider extends ServiceProvider
 
         Fortify::loginView(fn () => view('pages.auth.login')); // Custom login page
 
+        Fortify::registerView(fn () => view('pages.auth.register')); // Custom registration page
 
     }
 }
