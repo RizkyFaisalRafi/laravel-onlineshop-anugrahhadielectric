@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -27,6 +28,7 @@ class ProductController extends Controller
 
         $product = new \App\Models\Product;
         $product->name = $request->name;
+        $product->description = $request->description;
         $product->price = (int) $request->price;
         $product->stock = (int) $request->stock;
         $product->category_id = $request->category_id;
@@ -53,7 +55,9 @@ class ProductController extends Controller
 
     // destroy
     public function destroy($id) {
-        return  view('pages.dashboard');
+        $user = Product::findOrFail($id);
+        $user->delete();
+        return redirect()->route('product.index');
     }
 
 }

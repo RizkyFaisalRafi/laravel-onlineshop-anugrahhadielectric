@@ -51,15 +51,15 @@
                                 @enderror
                             </div>
 
-                            {{-- Email --}}
+                            {{-- Description --}}
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email"
+                                <label>Description</label>
+                                <input type="text"
                                     class="form-control @error('email')
                                 is-invalid
                             @enderror"
-                                    name="email">
-                                @error('email')
+                                    name="description">
+                                @error('description')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

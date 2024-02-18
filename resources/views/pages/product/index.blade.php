@@ -57,6 +57,7 @@
                                     <table class="table-striped table">
                                         <tr>
                                             <th>Name Product</th>
+                                            <th>Description</th>
                                             <th>Category</th>
                                             <th>Price</th>
                                             <th>Stock</th>
@@ -67,6 +68,7 @@
                                             <tr>
 
                                                 <td> {{ $product->name }} </td>
+                                                <td> {{ $product->description }} </td>
                                                 <td> {{ $product->category->name }} </td>
                                                 <td> {{ $product->price }} </td>
                                                 <td> {{ $product->stock }} </td>
