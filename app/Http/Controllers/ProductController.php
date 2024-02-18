@@ -5,14 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-  // index
-    public function index() {
-    // Get users with pagination
-    $products = \App\Models\Product::paginate(5); //  5 is the number of items to display per page.
-    return view('pages.product.index', compact( 'products' )); // Send data to the product.index view file with the variable "products".
+    // index
+    public function index(Request $request) {
+    // Search
+    $query = Product::query();
+
+    if ($request->has('name')) {
+        $query->where('name', 'like', '%' . $request->input('name') . '%');
+    }
+
+    // Eager load the 'category' relationship
+    $products = $query->with('category')->paginate(5);
+
+    // Fetch categories regardless of the search
+    $categories = \App\Models\Category::all();
+
+    return view('pages.product.index', compact('products', 'categories'));
     }
 
     // create

@@ -41,7 +41,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('category.index') }}">
+                                    <form method="GET" action="{{ route('product.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
