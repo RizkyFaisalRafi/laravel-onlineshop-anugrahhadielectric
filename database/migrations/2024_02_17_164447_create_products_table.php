@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             // description
             $table->text('description')->nullable();
+            // brand
+            $table->string('brand')->nullable();
             // image
             $table->string('image')->nullable();
             // price

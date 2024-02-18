@@ -68,6 +68,21 @@
                                 @enderror
                             </div>
 
+                            {{-- Brand --}}
+                            <div class="form-group">
+                                <label>Brand</label>
+                                <input type="text"
+                                    class="form-control @error('brand')
+                                is-invalid
+                            @enderror"
+                                    name="brand" value="{{ old('brand',$user->brand) }}" id="brand">
+                                @error('brand')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
                             {{-- Price --}}
                             <div class="form-group">
                                 <label>Price</label>
@@ -102,12 +117,12 @@
                             {{-- Category --}}
                             <div class="form-group">
                                 <label class="form-label">Category</label>
-                                <select class="form-control selectric @error('category_id') is-invalid @enderror"
+                                <select class="form-control selectric @error('category_id') is-invalid @enderror" name="category_id" required>
                                     name="category_id">
                                     <option value="">-- Select Category --</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
-                                            {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                            {{ old('category_id', isset($user) ? $user->category_id : '') == $category->id ? 'selected' : '' }}>
                                             {{ $category->name }}
                                         </option>
                                     @endforeach
@@ -127,6 +142,31 @@
                                     </div>
                                 @enderror
                             </div>
+
+                            {{--  --}}
+                            {{-- Photo Product --}}
+                            {{-- <div class="form-group">
+                                <label>Current Photo Product</label>
+                                @if($user->image)
+                                    <div>
+                                        <img src="{{ asset('storage/public/products/' . $user->image) }}" alt="Current Product Image" style="max-width: 200px;">
+                                    </div>
+                                @else
+                                    <div>No photo available</div>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <label>Upload New Photo Product</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="image" @error('image') is-invalid @enderror>
+                                </div>
+                                @error('image')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div> --}}
 
                         </div>
                         <div class="card-footer text-right">

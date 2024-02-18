@@ -19,6 +19,7 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->text(),
+            'brand' => fake()->text(),
             'image' => fake()->imageUrl(),
             'price' => fake()->randomNumber(4),
             // Stock / Quantity Product

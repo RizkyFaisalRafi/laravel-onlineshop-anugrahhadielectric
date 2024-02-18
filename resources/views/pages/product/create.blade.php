@@ -55,11 +55,26 @@
                             <div class="form-group">
                                 <label>Description</label>
                                 <input type="text"
-                                    class="form-control @error('email')
+                                    class="form-control @error('description')
                                 is-invalid
                             @enderror"
                                     name="description">
                                 @error('description')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            {{-- Brand --}}
+                            <div class="form-group">
+                                <label>Brand</label>
+                                <input type="text"
+                                    class="form-control @error('brand')
+                                is-invalid
+                            @enderror"
+                                    name="brand">
+                                @error('brand')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

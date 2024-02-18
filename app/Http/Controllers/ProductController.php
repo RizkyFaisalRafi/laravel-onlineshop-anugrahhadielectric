@@ -42,6 +42,7 @@ class ProductController extends Controller
         $product = new \App\Models\Product;
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->brand = $request->brand;
         $product->price = (int) $request->price;
         $product->stock = (int) $request->stock;
         $product->category_id = $request->category_id;
