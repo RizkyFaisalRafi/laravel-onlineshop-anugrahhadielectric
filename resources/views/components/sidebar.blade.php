@@ -35,6 +35,7 @@
                 </ul>
             </li>
 
+            {{-- Category --}}
             <li class="nav-item dropdown">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Category</span></a>
@@ -47,7 +48,8 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-item dropdown">
+            {{-- Product --}}
+            <li class="nav-item dropdown">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Product</span></a>
                 <ul class="dropdown-menu">
@@ -55,9 +57,8 @@
                         <a class="nav-link"
                             href="{{route('product.index')}}">All Product</a>
                     </li>
-
                 </ul>
-            </li> --}}
+            </li>
 
 
     </aside>
