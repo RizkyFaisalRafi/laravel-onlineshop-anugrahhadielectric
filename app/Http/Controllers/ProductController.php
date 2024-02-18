@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -45,12 +46,17 @@ class ProductController extends Controller
 
     // edit
     public function edit($id) {
-        return  view('pages.dashboard');
+        $user  = Product::findOrFail($id);
+        $categories = Category::all(); // Menambahkan baris ini untuk mendapatkan semua kategori
+        return view('pages.product.edit', compact('user', 'categories'));
     }
 
     // update
     public function update(Request $request, $id) {
-        return  view('pages.dashboard');
+        $data = $request->all();
+        $user  = Product::findOrFail($id);
+        $user ->update($data);
+        return redirect()->route('product.index');
     }
 
     // destroy
