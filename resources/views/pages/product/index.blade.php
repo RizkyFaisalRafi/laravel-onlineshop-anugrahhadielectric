@@ -56,7 +56,6 @@
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-
                                             <th>Name Product</th>
                                             <th>Category</th>
                                             <th>Price</th>
